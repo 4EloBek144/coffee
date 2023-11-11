@@ -13,7 +13,7 @@ cur = con.cursor()
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('tilt.ui', self)
+        uic.loadUi('main.ui', self)
         self.s = cur.execute('PRAGMA table_info("cof")')
         self.column_names = [i[1] for i in cur.fetchall()]
         self.result = cur.execute(f'''select * from cof''').fetchall()
